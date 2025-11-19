@@ -1,22 +1,22 @@
-# Projektidee: Fluganst Buddy
+# Project Idea: Fly Buddy
 
-## Ziel der Anwendung
-Eine Web-App, die Menschen mit Hilfe von Informationen, Entspannungsübungen und Fortschrittsverfolgung dabei unterstützt mit ihrer Flugangst umzugehen. 
+## Goal of the App
+A web app designed to support individuals with fear of flying by providing helpful information, calming exercises, optional progress tracking and gentle guidance to increase comfort and confidence.
 
-## Kernfunktionen
-- Registrierung und Login für User
-- Bereich für "Tagebucheinträge"
-- Beruhigungsübungen (z.B. A-Z)
-- Skala 1-10 pro Flug (mehrere Kategorien, z.B. Angst, Turbulenzen)
+## Core Functions
+- Sign up and log in for users
+- Area for diary entries
+- Calming exercises (e.g. A-Z)
+- Scale 1-10 per flight (multiple Categories, e.g. Anxiety, Turbulence, etc)
 
-## Technischer Aufbau 
+## Tech Stack
 - **Frontend**: HTML, CSS, Javascript 
-- **Backend**: PHP (Login, Datenverarbeitung)
-- **Datenbank**: MySQL (Nutzer, Einträge, Übungen)
-- **Server**: Lokale Umgebung 
+- **Backend**: PHP (Login, Data handling)
+- **Database**: MySQL (Users, Entries, Exercises)
+- **Server**: Local Environment
 
 ## ERM 
-# Tabelle: users
+# table: users
 dot.node('users')
 --------------
 user_id (PK)
@@ -27,7 +27,7 @@ last_name
 password
 created_at
 
-# Tabelle: entries
+# table: entries
 dot.node('entries')
 --------------
 entry_id (PK)
@@ -37,7 +37,7 @@ content
 created_at
 updated_at
 
-# Tabelle: flight_ratings
+# table: flight_ratings
 dot.node('flight_ratings')
 --------------
 rating_id (PK)
@@ -51,7 +51,7 @@ turbulence_level
 comment
 created_at
 
-# Tabelle: exercises (global)
+# table: exercises (global)
 dot.node('exercises')
 --------------
 exercise_id (PK)
@@ -60,7 +60,7 @@ description
 category
 created_at
 
-# Tabelle: user_exercises (benutzerdefiniert)
+# table: user_exercises (custom)
 dot.node('user_exercises')
 --------------
 user_exercise_id (PK)
@@ -69,7 +69,7 @@ title
 description
 created_at
 
-# Beziehungen
+# Relations
 dot.edge('users', 'entries', label='1:n')
 dot.edge('users', 'flight_ratings', label='1:n')
 dot.edge('users', 'user_exercises', label='1:n')

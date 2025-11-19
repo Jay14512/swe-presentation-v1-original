@@ -1,4 +1,4 @@
-# Projektidee: Fluganst Buddy
+# Projektidee: Flugangst Buddy
 
 ## Ziel der Anwendung
 Eine Web-App, die Menschen mit Hilfe von Informationen, Entspannungsübungen und Fortschrittsverfolgung dabei unterstützt mit ihrer Flugangst umzugehen. 
