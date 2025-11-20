@@ -1,44 +1,58 @@
-# Einleitung 
-Meine Projektidee ist eine Web-Applikation für Menschen mit Flugangst. Da ich bis vor kurzem selbst unter massiver Flugangst litt, weiß ich aus Erfahrung, wie problematisch das sein kann. Begonnen damit, dass man einige Nächte davor schon nicht mehr schlafen kann, einen Knoten im Bauch hat, kein Appetit und so weiter. Natürlich gibt es Alternativen zum Fliegen, jedoch lässt es sich nicht immer vermeiden. Gerade bei längeren Strecken oder wenn man mal schnell wo sein muss, zum Beispiel bei einem Meeting in einer anderen Stadt oder aus sonstigen geschäflichen beziehungsweise privaten Gründen. 
+# Introduction 
+My idea for this project is a web app designed to support people who experience fear of flying. Since, until recently I used to be a very anxious flyer myself, I know first-hand how difficult this can be and how it can limit your life. For me it meant not being able to sleep the nights leading up to the flight, stomach aches, no appetite and and a lot of tension. And even though there are alternatives to flying, sometimes getting on a plane is unavoidable. Especially for long distances  or you need to be somewhere quickly, whether it's a meeting in another city or for personal reasons. 
 
-# Vorstellung App
-Genau für dieses Problem bzw. für diese Situation habe ich ein Konzept für eine App entwickelt, die Menschen dabei Helfen soll mit ihrer Flugangst besser umzugehen. Es handelt sich hierbei nicht um eine App, mit der man sich therapieren kann, sondern vielmehr um ein Werkzeug um die Vorbereitungen auf den Flug beziehungsweise den Flug selbst so stressfrei wie möglich zu gestalten und hinterher die Möglichkeit bieten sich Notizen zum jeweiligen Flug zu machen. 
+# Introduction App
+For this reason, I developed a concept for an app that is meant to support people in this situation. It's not desigend to be a therpeutic app, but rather a practical tool to help users prepare for their flight and stay as calm as possible during the experience. It also gives them the option to take notes after each flight, which can help them track their feelings and progress over time. 
 
-## Funktionen 
-### Übungen
-Die User:innen haben die Möglichkeit entweder empfohlene Beruhigungsübungen durchzuführen, welche mit Beschreibung direkt in der App mitgeliefert werden, oder eigene Entspannungstechniken und Übungen mit Beschreibung dieser in ihrem Profil einzutragen. 
+## Functions 
+### Exercises
+Users can choose between recommended calming exercises that come with the app — each with a short description — or they can add their own relaxing techniques and exercises to their profile.
 
-### Strecke 
-Für jeden Flug gibt es die Möglichkeit sowohl den Start als auch den Zielflughafen anzugeben. 
 
-### Fluglinie (optional)
-Weiters gibt es die Möglichkeit einzutragen mit welcher Gesellschaft jemand geflogen ist. Dieses Feld ist jedoch optional. 
+### Route 
+It will be possible to enter both the departure and the destination airport for each flight.
 
-### Skalas
-Es wird verschiedene Kategorien mit Skalas von 1-10 geben. Zum Beispiel eine Skala in der man bewerten kann wie stark man die Turbulenzen empfunden hat. Eine weitere Skala auf der man das durchschnittliche Angstlevel während des Flugs auswählen kann. 
+### Airline (optional)
+Furthermore, users can enter the airline they flew with. This field is  optional though.
 
-## Technische Details 
+### Scales
+There will be different categories with scales from 1-10, which can be used to rate how strong you experienced turbulances, as well as a scale that lets you chose your average anxiety level throught your flight. 
 
-### Datenbank 
-Alle Daten der User:innen, sprich Username, Vorname, Nachname, Passwort und so weiter werden in MySQL gespeichert. Die Datenbank enthält neben der User-Tabelle weitere Tabellen wie entries, flight_ratings und user_exercises, die über Foreign Keys mit dem jeweiligen User beziehungsweise der jeweiligen Userin verknüpft sind. Dadurch lässt sich jederzeit nachvollziehen, welchem Konto der Eintrag zuzuordnen ist. 
 
-### Signup und Login  
-Die Registrierung wird serverseitig mit PHP validiert. Dabei wird zum Beispiel geprüft, ob der Benutzername bereits vergeben ist, ob das Passwort bestimmte Anforderungen erfüllt (zum Beispiel Mindestlänge und Sonderzeichen), und ob alle Pflichtfelder ausgefüllt wurden. Erst wenn alle Bedingungen erfüllt sind, werden die Daten in der Datenbank gespeichert.
+## Technical Details 
 
-Beim Login wird mit PHP überprüft, ob ein:e passende:r User:in mit den angegebenen Zugangsdaten existiert. Dazu wird ein Datenbankabgleich durchgeführt. Wenn die Angaben nicht stimmen, wird eine entsprechende Fehlermeldung angezeigt.
+### Database 
+All user data — such as username, first name, last name, password, and so on — will be stored in a MySQL database.
+The following tables will be used for this project: users, entries, flight_ratings, and user_exercises.
+The last two tables are linked to the user through a foreign key, which makes it possible to clearly identify which account each entry belongs to.
+
+### Signup and Login  
+The signup process is validated on the server side using PHP.
+The validation checks whether a username is already taken, whether the password meets certain requirements (such as minimum length and special characters), and whether all required fields have been filled out.
+The data is only saved to the database once all conditions are met.
+
+For the login process, PHP checks whether a user with matching credentials exists by comparing the input to the database.
+If the information is incorrect, an appropriate error message is displayed.
 
 ### Server
-Die App läuft lokal mit einem Apache-Server über XAMPP. Die Logik wird mit PHP umgesetzt, während die Daten mit MySQL verwaltet werden. Um SQL-Injections zu verhindern erfolgt die Verbindung zur Datenbank über PDO. 
+The app runs locally on an Apache server using XAMPP.
+The logic is implemented in PHP, while the data is stored in a MySQL database.
+To protect against SQL injection, the database connection is handled through PDO.
 
 ### User Interface/User Experience(UI/UX)
-Die App ist bewusst schlicht gehalten, da der Hauptfokus auf der Funktionalität und nicht auf dem Aussehen liegt. Es wird HTML und CSS sowie JavaScript für die Interaktivität von Navigationselementen und Live-Feedback bei Formularen verwendet. 
+The app is intentionally kept simple, since the main focus is on functionality rather than appearance.
+It uses HTML and CSS, as well as JavaScript for interactive elements such as navigation and live feedback in forms.
 
-Für bessere Benutzerfreundlichkeit wird JavaScript verwendet, um beim Passwortfeld direkt zu zeigen, ob bestimmte Anforderungen erfüllt sind. Die eigentliche Validierung und Datenverarbeitung erfolgt aus Sicherheitsgründen trotzdem auf dem Server mit PHP.
+For better usability, JavaScript is also used to immediately show whether certain password requirements are met while typing.
+However, the actual validation and data processing is still handled on the server with PHP for security reasons.
 
 ### APIs
-Im Moment werden noch keine APIs verwendet. Jedoch hat die App meiner Meinung nach sehr viel Potenzial und könnte in Zukunft mit weiteren Funktionen ausgebaut werden. Beispiele hierfür sind eine Wettervorhersage für den Tag des Flugs, automatische Vorschläge der Fluggesellschaft während man tippt, Reisehinweise und so weiter.
+At the moment, the app does not use any external APIs.
+However, I believe it has a lot of potential and could be expanded with additional features in the future.
+Possible examples include a weather forecast for the day of the flight, automatic airline suggestions while typing, travel notices, and more.
 
-# Abschluss
-Flugangst ist ein Thema von dem sehr sehr viele Menschen betroffen sind. Mit meinem Projekt kann ich zwar niemanden einfach so von Flugangst befreien, jeodch hoffe ich, dass einen kleinen Beitrag damit leisten kann, um Betroffenen ein bisschen Kontrolle über die Situation zu geben, sowohl technisch, als auch emotional. 
+# Conclusion
+Fear of flying is something that affects many people.
+While I cannot cure anyone with this project, I hope that it can make a  difference by helping users regain a sense of control — both technically and emotionally.
 
-Vielen Dank 
+Thank you for your attention

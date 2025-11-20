@@ -12,3 +12,9 @@ Additionally, we had to design a complete Entity Relationship Model (ERM) for th
 
 ## Main Goal
 Understanding and communicating the planning process and technical architecture of a PHP-based web application.
+
+
+
+---
+
+© 2025 Joshua Jason. All rights reserved
