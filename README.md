@@ -5,7 +5,7 @@
 **Status:** ✅ Done  
 **Version:** 1.0  
 
-This repository contains the original concept and presentation of a project idea that I may develop in the future. Therefore, the content is not licensed for reuse.
+This repository contains the original concept and presentation of a project idea that I plan to develop in the future. Therefore, the content is not licensed for reuse.
 
 ## Description
 Unlike other projects that focused on coding, this exercise was designed to teach us the importance of planning and structuring a project before development begins.  
