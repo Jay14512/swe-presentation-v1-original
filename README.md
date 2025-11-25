@@ -5,6 +5,8 @@
 **Status:** ✅ Done  
 **Version:** 1.0  
 
+This repository contains the original concept and presentation of a project idea that I may develop in the future. Therefore, the content is not licensed for reuse.
+
 ## Description
 Unlike other projects that focused on coding, this exercise was designed to teach us the importance of planning and structuring a project before development begins.  
 We had to present our idea for a web application built with PHP and SQL, describe its core functionality, and explain the planned technical setup (server, APIs, databases, and user interface).  
